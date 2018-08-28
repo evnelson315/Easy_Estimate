@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EasyEstimate</title>
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+	
+	<div class="container">
+		<div class="jumbotron">
+		<img src="http://www.meyermachinetool.com/machine-tools-rp.jpg" alt="easyEstimate" style="width:304px;height:228px;">
+			<h1>Quote Completed!</h1>
+			<h3> with EasyEstimate</h3>
+		</div>
+		<div class="row">
+
+			<div class="col-lg-12">
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title"><strong>Your New Estimate</strong></h3>
+					</div>
+					<div class="panel-body">
+						<div class="well">
+							<h2 id="name"></h2>
+							<div id="stats">
+								<h3><strong>Part Number:</strong> <span id="partNumber"></span></h3>
+								<h3><strong>Rev:</strong><span id="rev"></span></h3>
+								<h3><strong>QTY: </strong><span id="qty"></span></h3>
+								<h3><strong> Part Cost:</strong> <span id="partCost"></span></h3>
+								<h3><strong> Total Cost:</strong> <span id="cost"></span></h3>
+								<!-- <h3><strong>Engineering NRE:</strong> <span id="c=engNre"></span></h3> -->
+								
+					<!-- 			<h3><strong>Combo Set up Time:</strong><span id="comboSet"></span></h3>
+
+								<h3><strong>Combo Run Time:</strong><span id="comboRun"></span></h3>
+
+								<h3><strong>Brake Set up Time:</strong><span id="brakeSet"></span></h3>
+
+								<h3><strong>Brake Run Time:</strong><span id="brakeRun"></span></h3>
+								
+								<h3><strong>Detail Set up Time:</strong> <span id="detailSet"></span></h3>
+
+								<h3><strong>Detail Run Time:</strong> <span id="detailSet"></span></h3>
+
+								<h3><strong>Weld Set up Time:</strong> <span id="detailSet"></span></h3>
+
+								<h3><strong>Weld Run Time:</strong> <span id="detailSet"></span></h3>
+
+								<h3><strong>Finishing Cost:</strong> <span id="finCost"></span></h3>
+
+								<h3><strong>Hardware Set up Time:</strong> <span id="finCost"></span></h3>
+
+								<h3><strong>Hardware Run Time:</strong> <span id="finCost"></span></h3> -->
+								<!-- <h3><strong>Plot:</strong> <span id="forcePoints"></span></h3> -->
+							
+						</div>
+						</div>
+<a href="/"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-th-list"></span> HOME </button></a><br>
+<button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-th-list"></span> EMAIL THIS ESTIMATE </button>
+						</div>
+					</div>
+				</div>
+
+			<!-- 			<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title"><strong>Part Search - Enter a Part Number from your database to delete it here.</strong></h3>
+					</div>
+					<div class="panel-body">
+						<input type="text" id="prtSearch" class="form-control" >
+						<br>
+						<div class="text-right">
+							<button type="submit" class="btn btn-primary btn-md" id="searchBtn"></span><span class="glyphicon glyphicon-search"></span> Search your Part Numbers</button><br>
+								<div class="text-right">
+							<button type="deleteBtn" class="btn btn-primary btn-md" id="deleteBtn"></span><span class="glyphicon glyphicon-search"></span> Delete this part number</button><br>
+							<a href="/"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-th-list"></span> HOME</button></a> -->
+							
+							
+						</div>
+					</div>
+				</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+
+			//$([]).get(-1);
+			 	// var newestEst = quotes.length-1[0];
+			 	// var lastElement = quotes.slice(-1)[0][0];
+			 
+//=============ON PAGE LOAD, PERFORM API REQUEST TO GET MOST RECENT OBJECT DATA======
+			$( document ).ready(function() {
+			 		console.log("helloooooooo");
+
+
+
+			 		
+
+			var currentURL = window.location.origin;
+			console.log(currentURL + "/api/latest");
+
+			$.get( currentURL + "/api/latest", function( data )
+				{	var newEst = data.newEst;
+					
+					$("#partNumber").text(newEst.partNumber);
+					$("#rev").text(newEst.partRev);
+					$("#qty").text(newEst.partQty);
+					$("#partCost").text(data.partRoundedcost);
+					$("#cost").text(data.totalRoundedjob);
+					$("#stats").show(750);
+				});
+			});	
+
+
+		// $('#deleteBtn').on("click", function(){
+
+		// 	var searchedMovie = $("#movieSearch").val().trim();
+
+		// 	searchedMovie = searchedMovie.replace(/\s+/g, '').toLowerCase();
+
+		// 	var currentURL = window.location.origin;
+		// 	console.log('success  deleted')
+		// 	$.ajax({method: "DELETE", url: currentURL + "/api/" + searchedMovie})
+		// 	.done(function( data ) {
+		// 		if(data == false){
+		// 			$("#name").text("This is not in your database. ");
+		// 			$("#stats").hide();
+		// 		}
+		// 		else { }
+				
+		// 	});
+		// 	alert("movie deleted")
+		// 	return false;
+		// });	
+
+
+
+		// $('#searchBtn').on("click", function(){
+
+		// 	var searchedMovie = $("#movieSearch").val().trim();
+
+		// 	searchedMovie = searchedMovie.replace(/\s+/g, '').toLowerCase();
+
+		// 	var currentURL = window.location.origin;
+
+		// 	$.get( currentURL + "/api/" + searchedMovie, function( data ) {
+
+		// 		// console.log(data);
+		// 		if(data == false){
+		// 			$("#name").text("This is not in your database. ");
+		// 			$("#stats").hide();
+		// 		}
+		// 		else {
+		// 			$("#stats").show();
+		// 			$("#name").text(data.name);
+		// 			$("#year").text(data.year);
+		// 			$("#rating").text(data.rating);
+		// 			$("#actors").text(data.actors);
+		// 			$("#genre").text(data.genre);					
+		// 		}
+
+		// 	});
+
+		// });	
+
+	</script>
+
+</body>
+</html>

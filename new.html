@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EasyEstimate</title>
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<style>
+	.form-group {
+    width: 250px;
+    }
+	</style>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+	
+	<div class="container">
+		<div class="jumbotron">
+		<img src="http://www.meyermachinetool.com/machine-tools-rp.jpg" alt="easyEstimate" style="width:304px;height:228px;">
+			<h1>Let's Get Started</h1>
+			<h3>Easy Estimate</h3>
+			<hr>
+	
+		</div>
+		<div class="row">
+
+					<div class="col-lg-12">
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title"><strong>Start your Estimate here</strong></h3>
+					</div>
+					<div class="panel-body">
+						<form action="" method="POST" role="form">
+						
+							<div class="form-group">
+								<label for="">Part Number</label>
+								<input type="text" class="form-control" id="partNumber" placeholder="">
+							</div>
+
+							<button type="submit" class="btn btn-primary btn-md" id="searchedEst"></span><span class="glyphicon glyphicon-fire"></span> Search My Estimates</button>
+
+							<div class="form-group">
+								<label for="">Rev</label>
+								<input type="text" class="form-control" id="partRev" placeholder="">
+							</div>
+							<div class="form-group">
+								<label for="">Part Quantity</label>
+								<input type="text" class="form-control" id="ptqty" placeholder="">
+							</div>
+
+							<div class="form-group">
+								<label for="">Material</label>
+							<!-- <form action="action_page.php"> -->
+							  <select id="material">
+							    <option value="1">Aluminum</option>
+							    <option value=".75">Steel</option>
+							    <option value="1.5">Stainless Steel</option>
+							    <option value="2">Copper</option>
+							     <option value="1">Delrin</option>
+							    </select>
+							    <br>
+							  <div>
+							<div class="form-group">
+								<label for="">Sheet Thickness</label>
+								<input type="text" class="form-control" id="thickness" placeholder="">
+							</div>
+							<div class="form-group">
+								<label for="">Part Width</label>
+								<input type="text" class="form-control" id="partWidth" placeholder="">
+							</div>
+							<div class="form-group">
+								<label for="">Part Length</label>
+								<input type="text" class="form-control" id="partLength" placeholder="">
+							</div>
+							<div class="form-group">
+								<label for="">Sheet Width</label>
+								<input type="text" class="form-control" id="sheetWidth" placeholder="">
+							</div>
+							<div class="form-group">
+								<label for="">Sheet length</label>
+								<input type="text" class="form-control" id="sheetLength" placeholder="">
+							</div>
+							<div class="form-group">
+								<label for="">Number of Drilled Holes</label>
+								<input type="text" class="form-control" id="numHoles" placeholder="">
+							</div>
+							<div class="form-group">
+								<label for="">Hole Diameter</label>
+								<input type="text" class="form-control" id="drilDia" placeholder=""">
+							</div>
+
+
+							<div class="form-group">
+								<label for="">Outline Length</label>
+								<input type="text" class="form-control" id="outlineLength" placeholder="">
+							</div>
+							<div class="form-group">
+								<label for="">Rectangular Cutouts length</label>
+								<input type="text" class="form-control" id="rectangleLength" placeholder="">
+							</div>
+							<div class="form-group">
+								<label for="">Number of Bends</label>
+								<input type="text" class="form-control" id="numBends" placeholder="">
+							</div>
+							<div class="form-group">
+								<label for="">Inches of Weld</label>
+								<input type="text" class="form-control" id="weldInches" placeholder="">
+							</div>
+							<div class="form-group">
+								<label for="">Inches of Grinding</label>
+								<input type="text" class="form-control" id="grindInches" placeholder="">
+							</div>
+							<div class="form-group">
+								<label for="">Minimum Finishing Charge</label>
+								<input type="text" class="form-control" id="minFin" placeholder="">
+							</div>
+							<div class="form-group">
+								<label for="">Finish</label>
+							  	<select id="Finish">
+							  	<option value="0">none</option>
+							    <option value=".120">Paint</option>
+							    <option value=".15">Powder Coat</option>
+							    <option value=".50">Clear Anodize</option>
+							    <option value=".015">Black Anodize</option>
+							    <option value=".02">Nickel Plate</option>
+							    <option value=".25">Zinc Plate</option>
+							  </select>
+							<!--   <div> -->
+
+
+								<div class="form-group">
+								<label for="">Hardware</label>
+							  <select id="Hardware">
+							  	<option value="0">none</option>
+							    <option value=".15">Pem Insert</option>
+							    <option value=".18">Nutplate</option>
+							    <option value=".08" selected>Rivet</option>
+							  </select>
+							  </div>
+
+							<div class="form-group">
+								<label for="">Hardware Qty</label>
+								<input type="text" class="form-control" id="hardwareQty" placeholder="">
+							</div>
+								<div class="form-group">
+								<label for="">Engineering Hours</label>
+								<input type="text" class="form-control" id="enHours" placeholder="">
+							</div>
+							<div class="form-group">
+								<label for="">Profit Margin</label>
+								<input type="text" class="form-control" id="margin" placeholder="">
+							</div>
+
+
+						</form>
+						<br>
+						<a href="/complete">
+						<div class="text-right">
+							<a href="/complete"><button type="submit" class="btn btn-primary btn-md" id="newEst"></span><span class="glyphicon glyphicon-fire"></span> Complete Estimate</button>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</div>			
+		</div>
+	</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+
+
+$('#newEst').on("click", function(){
+
+			var newEst = 
+			{
+				partNumber: $("#partNumber").val().trim(),
+				partRev: $("#partRev").val().trim(),
+				partQty: $("#ptqty").val().trim(),
+				// material:$("#material").val();
+				material:$('#material option:selected').val(),
+				thickness: $("#thickness").val().trim(),
+				partWidth: $("#partWidth").val().trim(),
+				partLength: $("#partLength").val().trim(),
+				sheetWidth: $("#sheetWidth").val().trim(),
+				sheetLength: $("#sheetLength").val().trim(),
+				numHoles: $("#numHoles").val().trim(),
+				HoleDia: $("#drilDia").val().trim(),
+				outlineLength: $("#outlineLength").val().trim(),
+				cutoutLength: $("#rectangleLength").val().trim(),
+				numBends: $("#numBends").val().trim(),
+				weldInches: $("#weldInches").val().trim(),
+				grindInches: $("#grindInches").val().trim(),
+				minFin: $("#minFin").val().trim(),
+				Finish: $("#Finish option:selected").val(),
+				Hardware:$("#Hardware option:selected").val(),
+				hardwareQty: $("#hardwareQty").val().trim(),
+				enHours: $("#enHours").val().trim(),
+				margin: $("#margin").val().trim()
+			};
+
+			console.log(newEst);
+			console.log(newEst.partNumber);
+
+			var currentURL = window.location.origin;
+
+			
+			$.post( currentURL + "/api/new", newEst)
+				.done(function(data){
+					// console.log(data);
+					// alert("Added part!")
+				window.location.href="/complete";
+				})
+
+			return false;
+
+		});	
+			
+
+		// 			$('#searchedEst').on("click", function(){
+
+		// 	var searchedMovie = $("#movieSearch").val().trim();
+
+		// 	searchedMovie = searchedMovie.replace(/\s+/g, '').toLowerCase();
+
+		// 	var currentURL = window.location.origin;
+
+		// 	$.get( currentURL + "/api/" + searchedMovie, function( data ) {
+		// 		// console.log(data);
+		// 		if(data == false){
+		// 			$("#name").text("This is not in your database. ");
+		// 			$("#stats").hide();
+		// 		}
+		// 		else {
+		// 			$("#stats").show();
+		// 			$("#name").text(data.name);
+		// 			$("#year").text(data.year);
+		// 			$("#rating").text(data.rating);
+		// 			$("#actors").text(data.actors);
+		// 			$("#genre").text(data.genre);					
+		// 		}
+
+		// 	});
+
+		// });	
+
+				$("#searchedEst").click(function(){
+
+						var searchedEst = $("#partNumber").val().trim();
+						var currentURL = window.location.origin;
+						var searchEstUrl = currentURL + "/api/all/" + searchedEst;
+					console.log(searchedEst);
+  					console.log(searchEstUrl);
+  					$.get( currentURL + "/api/all/" + searchedEst, function( data ) {
+
+  						var searchedPN = newEst.partNumber;
+  						var searchedRev = data.newEst.partRev;
+  						var searchedQty = data.newEst.partQty;
+  						var searchedMtl = data.newEst.material;
+  						var searchedThickness = data.newEst.thickness;
+  						var searchedPtWidth = data.newEst.partWidth;
+  						var searchedPtLength = data.newEst.partLength;
+  						var searchedShtWidth = data.newEst.sheetWidth;
+  						var searchedShtLength = data.newEst.sheetLength;
+  						var searchedNumHoles = data.newEst.numHoles;
+	  					var searchedHoleDia = data.newEst.HoleDia;
+	  					var searchedOutlineLength = data.newEst.outlineLength;
+	  					var searchedCutOuts = data.newEst.cutoutLength;
+	  					var searchedNumBends = data.newEst.numBends;
+	  					var searchedWeld = data.newEst.weldInches;
+	  					var searchedGrind = data.newEst.grindInches;
+	  					var searchedMinFin = data.newEst.minFin;
+	  					var searchedFin = data.newEst.Finish;
+	  					var searchedHardwareQty = data.newEst.hardwareQty;
+	  					var searchedEnHours = data.newEst.enHours;
+	  					var searchedMargin = data.newEst.margin;
+  						// $("input#partNumber.form-control").val(searchedPN);
+
+
+
+  						$("input#partRev.form-control").val(searchedRev);
+  						$("input#ptqty.form-control").val(searchedQty);
+  						$("input#material.form-control").val(searchedMtl);
+  						$("input#thickness.form-control").val(searchedThickness);
+  						$("input#partWidth.form-control").val(searchedPtWidth);
+  						$("input#partLength.form-control").val(searchedPtLength);
+  						$("input#sheetWidth.form-control").val(searchedShtWidth);
+  						$("input#sheetLength.form-control").val(searchedPtLength);
+  						$("input#numHoles.form-control").val(searchedNumHoles);
+  						$("input#drilDia.form-control").val(searchedHoleDia);
+  						$("input#outlineLength.form-control").val(searchedOutlineLength);
+  						$("input#rectangleLength.form-control").val(searchedCutOuts);
+  						$("input#numBends.form-control").val(searchedNumBends);
+  						$("input#weldInches.form-control").val(searchedWeld);
+  						$("input#grindInches.form-control").val(searchedGrind);
+  						$("input#minFin.form-control").val(searchedMinFin);
+  						$("input#Hardware.form-control").val("hardware");
+  						$("input#hardwareQty.form-control").val(searchedHardwareQty);
+  						$("input#enHours.form-control").val(searchedEnHours);
+  						$("input#margin.form-control").val(searchedMargin);
+
+  					// window.location.href="/";
+  						// console.log(data);
+  						alert(data.totalRoundedjob);
+  					});
+  					return false;
+					});
+
+
+});
+
+</script>
+		
+
+
+</body>
+</html>
